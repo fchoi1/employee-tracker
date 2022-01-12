@@ -2,7 +2,7 @@
   "name": "employee-tracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "ansi-escapes": "^4.3.2",
     "ansi-regex": "^5.0.1",
@@ -19,6 +19,7 @@
     "color-convert": "^2.0.1",
     "console.table": "^0.10.0",
     "denque": "^2.0.1",
+    "dotenv": "^11.0.0",
     "emoji-regex": "^8.0.0",
     "escape-string-regexp": "^1.0.5",
     "external-editor": "^3.1.0",
@@ -71,5 +72,13 @@
   "bugs": {
     "url": "https://github.com/fchoi1/empployee-tracker/issues"
   },
-  "homepage": "https://github.com/fchoi1/empployee-tracker#readme"
+  "homepage": "https://github.com/fchoi1/empployee-tracker#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
+  }
 }
