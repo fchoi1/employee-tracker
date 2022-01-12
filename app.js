@@ -12,7 +12,7 @@ const questions = [
       'View all employees',
       'Add a department',
       'Add a role',
-      'add an employee',
+      'Add an employee',
       'Update an employee role'],
     filter: (choice) => {
       switch (choice) {
@@ -26,7 +26,7 @@ const questions = [
           return 'addDepartment';
         case ('Add a role'):
           return 'addRole';
-        case ('Add a employee'):
+        case ('Add an employee'):
           return 'addEmployee';
         case ('Update an employee role'):
           return 'updateRole';
@@ -36,27 +36,63 @@ const questions = [
     },
   }];
 
-  const roleQuestions = [];
-  const departmentQuestions = [];
-  const employeeQuestions = [];
-  const updateRoleQuestions = [];
+const roleQuestions = [
+  {
+    type: 'input',
+    name: 'title',
+    message: 'Enter the role title',
+  }, {
+    type: 'number',
+    name: 'salary',
+    message: 'Enter the role salary',
+  }, {
+    type: 'number',
+    name: 'department_id',
+    message: 'Enter the department number associated with the role',
+  }];
 
-  const paramsQuestions = {
-    addDepartment: departmentQuestions,
-    addRole: roleQuestions,
-    addEmployee: employeeQuestions,
-    updateRole: updateRoleQuestions
-  };
+const departmentQuestions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'Enter the department name',
+  }];
 
-const getParmas = async(action){
-  return paramsQuestions[action] ? await inquirer.prompt(questions) : null;
-}
+const employeeQuestions = [
+  {
+    type: 'input',
+    name: 'first_name',
+    message: 'Enter employee first name',
+  }, {
+    type: 'input',
+    name: 'last_name',
+    message: 'Enter employee last name',
+  }, {
+    type: 'number',
+    name: 'role_id',
+    message: 'Enter the role id',
+  }, {
+    type: 'input',
+    name: 'manager_id',
+    message: 'Enter the manager id',
+  }];
+
+const updateRoleQuestions = [];
+
+const paramsQuestions = {
+  addDepartment: departmentQuestions,
+  addRole: roleQuestions,
+  addEmployee: employeeQuestions,
+  updateRole: updateRoleQuestions,
+};
+
+const getParams = (action) => ((paramsQuestions[action]) ? inquirer.prompt(paramsQuestions[action]) : {});
 
 const promptQuestion = async () => {
   const result = await inquirer.prompt(questions);
-  const params = getParams(result.action);
-
-  actions[result.action](params);
+  const params = await getParams(result.action);
+  console.log(actions[result.action], Object.values(params));
+  actions[result.action](Object.values(params));
 };
 
 promptQuestion();
