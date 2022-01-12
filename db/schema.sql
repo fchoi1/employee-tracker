@@ -10,9 +10,9 @@ CREATE TABLE departments (
 CREATE TABLE roles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30),
-    salary DECIMAL,
+    salary DECIMAL(6,2),
     department_id INTEGER,
-    CONSTRAINT fk_department_id FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
+    CONSTRAINT fk_department_id FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE SET NULL
 );
 
 CREATE TABLE employees (
@@ -21,5 +21,5 @@ CREATE TABLE employees (
     last_name VARCHAR(30) NOT NULL,
     role_id INT,
     manager_id INT,
-    CONSTRAINT fk_roles_id FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL
+    CONSTRAINT fk_roles_id FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL
 );

@@ -1,4 +1,4 @@
-INSERT INTO department (name)
+INSERT INTO departments (name)
     VALUES 
     ('Information Technology'),
     ('Accounting'), 
@@ -10,7 +10,7 @@ INSERT INTO department (name)
     ('Production'),
     ('Human Resources');
 
-INSERT INTO role (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
     VALUES
     ('Junior IT Analyst', 21.50, 1),
     ('IT Analyst', 26.50, 1),
@@ -61,7 +61,7 @@ INSERT INTO role (title, salary, department_id)
     ('HR Director', 42.00, 9);
 -- 47 Roles
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
     VALUES
     ('Jarvis','Robbins',1,4),
     ('Emmie','Gutierrez',2,4),
@@ -86,8 +86,8 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id)
     ('Winston','Proctor',21,24),
     ('Farrah','Pollard',22,24),
     ('Haris','Dalby',23,24),
-    ('Korban','Fenton',24,24),
-    ('Hebe','Simon',25,25),
+    ('Korban','Fenton',24,25),
+    ('Hebe','Simon',25,26),
     ('Charly','Maldonado',26,null),
     ('Fabien','Ward',27,30),
     ('Nathanial','Copeland',28,30),
@@ -152,6 +152,6 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id)
     ('Marisa','Mcgowan',44,87),
     ('Max','Gaines',46,47);
 
-ALTER TABLE employee 
+ALTER TABLE employees
     ADD CONSTRAINT fk_manager_id 
-    FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL;
+    FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL;
