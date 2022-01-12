@@ -36,9 +36,27 @@ const questions = [
     },
   }];
 
+  const roleQuestions = [];
+  const departmentQuestions = [];
+  const employeeQuestions = [];
+  const updateRoleQuestions = [];
+
+  const paramsQuestions = {
+    addDepartment: departmentQuestions,
+    addRole: roleQuestions,
+    addEmployee: employeeQuestions,
+    updateRole: updateRoleQuestions
+  };
+
+const getParmas = async(action){
+  return paramsQuestions[action] ? await inquirer.prompt(questions) : null;
+}
+
 const promptQuestion = async () => {
   const result = await inquirer.prompt(questions);
-  actions[result.action]();
+  const params = getParams(result.action);
+
+  actions[result.action](params);
 };
 
 promptQuestion();
