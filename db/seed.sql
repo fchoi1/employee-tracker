@@ -1,0 +1,66 @@
+INSERT INTO department (name)
+    VALUES 
+    ('Information Technology'),
+    ('Accounting'), 
+    ('Automation'), 
+    ('Marketing'),
+    ('Software Development'),
+    ('Quality Assurance'),
+    ('R&D'),
+    ('Production'),
+    ('Human Resources');
+
+INSERT INTO role (title, salary, department_id)
+    VALUES
+    ('Junior IT Analyst', 21.50, 1),
+    ('IT Analyst', 26.50, 1),
+    ('Senior IT Analyst', 36.40, 1),
+    ('IT Manager', 41.00, 1),
+    ('IT Lead', 46.10, 1),
+    ('Junior Accountant', 20.30, 2),
+    ('Controller', 21.5, 2),
+    ('Bookkeeper', 23.5, 2),
+    ('Acounting Manager', 38.30, 2),
+    ('Senior Accountant', 48.3, 2),
+    ('Head of Accountant', 67.50, 2),
+    ('Junior Automation', 26.50, 3),
+    ('Automation Engineer', 28.10, 3),
+    ('Automation Specialist', 35.40, 3),
+    ('Automation Lead', 43.50, 3),
+    ('Automation Director', 57.80, 3),
+    ('Marketing Specialist', 24.50, 4),
+    ('Brand Manager', 30.10, 4),
+    ('Director of Marketing', 42.50, 4),
+    ('Executive marketer', 81.10, 4),
+    ('Junior Software Dev', 28.90, 5),
+    ('Software Dev', 36.50, 5),
+    ('Senior Software Dev', 41.00, 5),
+    ('Software Manager', 52.20, 5),
+    ('Software Eng Director', 73.50, 5),
+    ('Software Eng VP', 79.10, 5),
+    ('QA Analyst', 19.80, 6),
+    ('QA Engineer', 23.00, 6),
+    ('Test Engineer', 29.80, 6),
+    ('Test Manager', 34.50, 6),
+    ('QA Team Lead', 42.40, 6),
+    ('Junior R&D Engineer', 26.50, 7),
+    ('R&D Engineer', 34.20, 7),
+    ('R&D Specialist', 38.90, 7),
+    ('R&D Manager', 45.90, 7),
+    ('R&D Director', 50.10, 7),
+    ('Operator', 19.80, 8),
+    ('Senior Operator', 22.00, 8),
+    ('Supervisor', 30.90, 8),
+    ('Production Manager', 45.50, 8),
+    ('Head of Production', 60.00, 8),
+    ('HR Assistant', 21.00, 9),
+    ('HR Representative', 24.70, 9),
+    ('HR Admin', 27.80, 9),
+    ('HR Specialist', 31.30, 9),
+    ('HR Manager', 34.90, 9),
+    ('HR Director', 42.00, 9);
+-- 47 Roles
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+    VALUES
+    ('Jarvis','Robbins',1,4);
