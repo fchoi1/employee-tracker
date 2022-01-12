@@ -1,4 +1,4 @@
-const inquier = require('inquirer');
+const inquirer = require('inquirer');
 const actions = require('./lib/actions');
 
 const questions = [
@@ -37,8 +37,8 @@ const questions = [
   }];
 
 const promptQuestion = async () => {
-  const action = await inquier.prompt(questions);
-  console.log(actions)
-
+  const result = await inquirer.prompt(questions);
+  actions[result.action]();
 };
-promptQuestion()
+
+promptQuestion();
