@@ -103,31 +103,22 @@ const paramsQuestions = {
   updateRole: updateRoleQuestions,
 };
 
-const getParams = (action) => ((paramsQuestions[action]) ? {
-  action,
-  prompt: inquirer.prompt(paramsQuestions[action]),
-} : {
-  action,
-  prompt: Promise.resolve({}),
-});
+const getParams = (action) => ((paramsQuestions[action])
+  ? inquirer.prompt(paramsQuestions[action])
+  : {});
 
-const promptQuestion = () => {
-  inquirer.prompt(questions).then((result) => getParams(result.action))
-    .then((params) => {
-      actions[params.action](Object.values(params.prompt));
-      return inquirer.prompt(endApp);
-    })
-    .then((isDone) => {
-      console.log(isDone);
-      if (isDone) {
-        console.log('here', isDone);
-      } else {
-        promptQuestion();
-      }
-    });
+const promptQuestion = async () => {
+  const result = await inquirer.prompt(questions);
+  const params = await getParams(result.action);
+  await actions[result.action](Object.values(params));
 
-  console.log(isDone);
+  const app = await inquirer.prompt(endApp);
+  if (app.isDone) {
+    console.log('Exiting App');
+    process.exit();
+  } else {
+    promptQuestion();
+  }
 };
 
 promptQuestion();
-console.log('broken');
