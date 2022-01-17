@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const Manager = require('../team-profile-generator/lib/Manager');
 const actions = require('./lib/actions');
 const utils = require('./utils');
 
