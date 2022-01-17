@@ -21,6 +21,6 @@ CREATE TABLE employees (
     last_name VARCHAR(30) NOT NULL,
     role_id INT,
     manager_id INT,
-    CONSTRAINT uq_fullname UNIQUE(first_name, last_name),
+    UNIQUE (first_name, last_name),
     CONSTRAINT fk_roles_id FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL
 );

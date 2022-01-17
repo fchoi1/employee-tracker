@@ -20,7 +20,7 @@ INSERT INTO roles (title, salary, department_id)
     ('Junior Accountant', 20.30, 2),
     ('Controller', 21.5, 2),
     ('Bookkeeper', 23.5, 2),
-    ('Acounting Manager', 38.30, 2),
+    ('Accounting Manager', 38.30, 2),
     ('Senior Accountant', 48.3, 2),
     ('Head of Accountant', 67.50, 2),
     ('Junior Automation', 26.50, 3),
