@@ -46,7 +46,7 @@ It is a simple command line application to view, update, and add to employee tab
   
 
 ## Usage
-  1. Once the application is started, it will prompt you on what actions to take
+  1. Once the application is started, it will prompt you on what actions to take   
     <img src="./images/step1.png" width="200">
   2. Select "View all departments" to view departments list   
     <img src="./images/step2.png" width="200">
