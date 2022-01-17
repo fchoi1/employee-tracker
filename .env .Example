@@ -1,0 +1,4 @@
+DB_HOST=<database hostname>
+DB_NAME=employees
+DB_USER=<database user>
+DB_PASS=<database password>
