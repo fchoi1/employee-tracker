@@ -1,10 +1,5 @@
 # Employee-Tracker
 
-## Heroku Application 
-
-[Note Taker Application](https://note-taker-fabio.herokuapp.com/notes)   
-<img src="./images/website.png" width="500">
-
 ## Description
 This is a simple content management system (CMS) to view employee database.
 It is a simple command line application to view, update, and add to employee tables using inquirer and mysql2.
