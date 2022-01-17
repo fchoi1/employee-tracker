@@ -63,7 +63,7 @@ It is a simple command line application to view, update, and add to employee tab
     <img src="./images/step7a.png" width="300">   
     <img src="./images/step7b.png" width="300">   
     <img src="./images/step7c.png" width="300">   
-  8. Select "Update an employee role" to update an existing employee's
+  8. Select "Update an employee role" to update an existing employee's   
     <img src="./images/step8.png" width="300">
   9. Select to do more actions on app or exit   
     <img src="./images/step9.png" width="300">
